@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Pistas Mejorado</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 40px;
+            text-align: center;
+            min-height: 100vh;
+            background: url("https://i.ibb.co/7dVt0nYG/Captura-de-pantalla-2026-01-05-a-las-12-22-09.png") 
+                        no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .contenedor {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            color: #000;
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn 1s forwards, float 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            from { transform: translateY(0); }
+            to { transform: translateY(-10px); }
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        p {
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        .botones {
+            margin: 30px 0;
+            position: relative;
+            height: 120px;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 16px;
+            cursor: pointer;
+            position: absolute;
+            border: none;
+            border-radius: 6px;
+            background-color: #b30000;
+            color: #fff;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #e60000;
+            transform: scale(1.15) translateY(-3px);
+        }
+
+        #si { left: 120px; top: 40px; }
+        #no { right: 120px; top: 40px; }
+
+        a {
+            display: inline-block;
+            margin-top: 15px;
+            font-size: 18px;
+            color: #b30000;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: #e60000;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="contenedor">
+
+    <a href="https://ibb.co/1thRMWWP">
+        <img src="https://i.ibb.co/W4qB0JJM/Captura-de-pantalla-2026-01-05-a-las-11-49-43.png"
+             alt="Dos regalos abiertos, uno con nariz de payaso y otro con esposas">
+    </a>
+
+    <p>
+        Vaya esas dos pistas no han sido suficientes? Pues si te digo que también incluye lo que me ha hecho a mi 
+        (no me refiero a Sheila, me refiero a la IA) tampoco ayuda mucho no?
+    </p>
+
+    <div class="botones">
+        <button id="si">Sí</button>
+        <button id="no">No</button>
+    </div>
+
+    <p>
+        Bueno venga no te hago sufrir más, nos vamos a ver este espectáculo que incluye todo eso:
+    </p>
+
+    <a href="https://circodeloshorrores.com" target="_blank">
+        Ver el espectáculo
+    </a>
+
+</div>
+
+<script>
+    const botones = document.querySelectorAll("button");
+
+    botones.forEach(boton => {
+        boton.addEventListener("mouseenter", () => {
+            const x = Math.random() * 350;
+            const y = Math.random() * 80;
+            boton.style.left = x + "px";
+            boton.style.top = y + "px";
+        });
+    });
+</script>
+
+</body>
+</html>
+
